@@ -1,9 +1,10 @@
 <template>
 	<div>
-		<h1>我是HiWorld组件</h1>
+		<!-- <h1>我是HiWorld组件</h1>
 		<p>msg:{{msg}}</p>
-		<p>num:{{num}}</p>
-		<button @click="info">向父类触发事件</button>
+		<p>num:{{num}}</p> -->
+		<slot name="top"></slot>
+		<button @click="info">按钮: <slot name="inner"></slot> </button>
 	</div>
 </template>
 

@@ -1,0 +1,17 @@
+*{
+	margin: 0;padding: 0;
+	box-sizing: border-box;
+}
+
+.lf{
+	float: left;
+}
+
+.rt{
+	float: right;
+}
+
+.clear{
+	clear: both;
+}
+/* wjh */

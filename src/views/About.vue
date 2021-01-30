@@ -1,48 +1,39 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
-	<div>
-		<button @click="reduce">-</button>
-		<span>{{num}}</span>
-		<button @click="add">+</button>
-		<p>{{ordinary()}}</p>
-		<p>{{comput1}}</p>
-		
-	</div>
-	<HiWorld msg='尨' :num="10" @infos='send'></HiWorld>
+   <Heart @abo="js" :statepop="f"> <span slot="to">商品：</span> </Heart>
+   <br>
+   <Star @tellf='sp' :starnumprop='px'> <span slot="to">商品</span> </Star>
+   <br>
+   <br>
+   <br>
+   <span><Step v-if="des"></Step></span>
+   <button @click="des=!des">注销</button>
   </div>
 </template>
 
 <script>
+	import Heart from '@/components/Heart.vue'
+	import Star from '@/components/Star.vue'
+	import Step from '@/components/Step.vue'
 export default {
-	data(){
-		return{
-			num:0
-		}
+	components:{
+		Heart,
+		Star,
+		Step
 	},
 	methods:{
-		send(e){
-			console.log('About',e)
+		js(e){
+			console.log('商品接收',e.state)
 		},
-		ordinary(){
-			console.log('普通法执行了')
-		},
-		reduce(){
-			this.num--;
-		},
-		add(){
-			this.num++;
+		sp(e){
+			console.log('商品评星',e.starnum)
 		}
 	},
-	computed:{
-		comput1(){
-			console.log('计算方法执行了')
-			return'计算方法执行了'+this.num
-		}
-	},
-	watch:{
-		num(newValue,oldValue){
-			console.log('检测到num的变化',newValue,oldValue)
+	data(){
+		return{
+			f:true,
+			des:true,
+			px:1
 		}
 	}
 	
